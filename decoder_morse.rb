@@ -22,4 +22,13 @@ end
 print decode_word('.-. ..- -... -.--')
 # => RUBY
 
+def decode_message(dycrpt_message)
+  return_value = ''
+  words = dycrpt_message.gsub('/', ' ').split('   ')
+  words.each { |item| return_value += " #{decode_word(item)}" }
+  return_value.strip
+end
 
+print decode_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...')
+
+# => A BOX FULL OF RUBIES
