@@ -12,4 +12,14 @@ end
 print decode_char('.-')
 # => A
 
+def decode_word(dycrpt_message)
+  return_value = ''
+  characters = dycrpt_message.split
+  characters.each { |item| return_value += decode_char(item) }
+  return_value
+end
+
+print decode_word('.-. ..- -... -.--')
+# => RUBY
+
 
